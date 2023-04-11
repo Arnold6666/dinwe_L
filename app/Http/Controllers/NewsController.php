@@ -25,6 +25,11 @@ class NewsController extends Controller
             return Redirect::to('/uploadNews');
         }
     }
+
+    public function getNews(){
+        $result = $this->news->getNews();
+        echo $result;
+    }
 }
 
 
