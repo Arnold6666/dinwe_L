@@ -68,7 +68,6 @@ class News extends Model
     public function getNews(){
         $allnews = DB::table('news')->get();
         $json = $allnews->toJson();
-        // $json = json_decode($json, true);
 
         return $json;
     }
