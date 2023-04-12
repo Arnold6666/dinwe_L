@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
-
 class News extends Model
 {
     use HasFactory;
@@ -26,7 +25,8 @@ class News extends Model
         'state'
     ];
 
-    public function uploadNews(Request $request){
+    public function uploadNews(Request $request)
+    {
         $title = $request->title;
         $text = $request->content;
         $state = isset($request->state) ? 1 : 0;
@@ -36,12 +36,12 @@ class News extends Model
         $updated_at = $dateTimeStr;
         // die($text);
 
-        if(isset($request->image)){
+        if (isset($request->image)) {
             $data = $request->image->get();
             $mime_type = $request->image->getMimeType();
             $imageData = base64_encode($data);
             $src = "data:{$mime_type};base64,{$imageData}";
-            $image=$src; 
+            $image = $src;
             // die($pimage);
             DB::table('news')->insert([
                 'title'     => $title,
@@ -51,7 +51,7 @@ class News extends Model
                 'created_at'    => $created_at,
                 'updated_at'    => $updated_at,
             ]);
-        }else{
+        } else {
             $image = null;
             DB::table('news')->insert([
                 'title'     => $title,
@@ -65,10 +65,13 @@ class News extends Model
         return "success";
     }
 
-    public function getNews(){
+    public function getNews()
+    {
         $allnews = DB::table('news')->get();
         $json = $allnews->toJson();
 
         return $json;
     }
+
+    
 }

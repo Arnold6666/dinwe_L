@@ -22,13 +22,20 @@ class NewsController extends Controller
         $result = $this->news->uploadNews($request);
         if($result === "success"){
             Session::flash('message', '建立成功');
-            return Redirect::to('/uploadNews');
+            // return Redirect::to('/uploadNews'); //php用
+            return $result;
         }
     }
 
     public function getNews(){
         $result = $this->news->getNews();
         echo $result;
+    }
+
+    public function getToken()
+    {
+        $token = Session::token();
+        return response()->json(['csrf_token' => $token]);
     }
 }
 

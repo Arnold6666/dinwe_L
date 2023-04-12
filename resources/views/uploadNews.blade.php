@@ -54,7 +54,7 @@
                     <div class="mb-3">
                       <label for="image" class="form-label">消息照片</label>
                       <input type="file" class="form-control" id="image" name="image">
-                  </div>
+                    </div>
                     <div class="mb-3 d-flex align-items-center">
                         <label for="state" class="form-label m-0">是否上架</label>
                         <input type="checkbox" class="form-check-input m-0 border-primary ms-2" id="state" name="state" value="1">

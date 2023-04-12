@@ -28,6 +28,7 @@ Route::get('/login', function () {
 
 Route::get('/uploadNews', function () {return view('uploadNews');});
 Route::get('/getNews', [NewsController::class, 'getNews']);
+Route::get('/getToken',[NewsController::class, 'getToken']);
 
 Route::post('/register', [MemberController::class, 'register']);
 Route::post('/uploadnews', [NewsController::class, 'uploadNews']);
