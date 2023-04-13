@@ -41,7 +41,7 @@
             @endif
             <div class="col-6 m-auto mt-5 border p-4 border-info rounded">
                 <form action="/uploadnews" method="post" enctype="multipart/form-data">
-                    @csrf
+                    {{-- @csrf --}}
                     @method('post')
                     <div class="mb-3">
                         <label for="title" class="form-label">標題</label>
