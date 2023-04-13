@@ -55,40 +55,23 @@
                         <input type="text" class="form-control" id="address" name="address">
                     </div>
                     <div class="mb-3">
+                        <label for="cover" class="form-label">封面</label>
+                        <input type="file" class="form-control" id="cover" name="cover">
+                    </div>
+                    <div class="mb-3">
                         <label for="image" class="form-label">餐廳照片1</label>
                         <input type="file" class="form-control" id="image" name="image">
-                    </div>
-                    <div class="mb-3">
-                        <label for="image2" class="form-label">餐廳照片2</label>
-                        <input type="file" class="form-control" id="image2" name="image2">
-                    </div>
-                    <div class="mb-3">
-                        <label for="image3" class="form-label">餐廳照片3</label>
-                        <input type="file" class="form-control" id="image3" name="image3">
                     </div>
                     <div class="mb-3">
                         <label for="menu" class="form-label">餐廳菜單1</label>
                         <input type="file" class="form-control" id="menu" name="menu">
                     </div>
                     <div class="mb-3">
-                        <label for="menu2" class="form-label">餐廳菜單2</label>
-                        <input type="file" class="form-control" id="menu2" name="menu2">
-                    </div>
-                    <div class="mb-3">
-                        <label for="menu3" class="form-label">餐廳菜單3</label>
-                        <input type="file" class="form-control" id="menu3" name="menu3">
-                    </div>
-                    <div class="mb-3">
-                        <label for="content" class="form-label">內文</label>
-                        <textarea class="form-control" style="resize: none; height: 300px" id="content" name="content"></textarea>
-                    </div>
-                    <div class="mb-3 d-flex align-items-center">
-                        <label for="state" class="form-label m-0">是否上架</label>
-                        <input type="checkbox" class="form-check-input m-0 border-primary ms-2" id="state"
-                            name="state" value="1">
+                        <label for="intro" class="form-label">餐廳簡介</label>
+                        <textarea class="form-control" style="resize: none; height: 300px" id="intro" name="intro"></textarea>
                     </div>
                     <p class="text-center mb-0">
-                        <button type="submit" class="btn btn-primary w-50">新增消息</button>
+                        <button type="submit" class="btn btn-primary w-50">新增餐廳</button>
                     </p>
                 </form>
             </div>

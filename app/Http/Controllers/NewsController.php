@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 use App\Models\News;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 
 class NewsController extends Controller
@@ -22,8 +21,9 @@ class NewsController extends Controller
         $result = $this->news->uploadNews($request);
         if($result === "success"){
             Session::flash('message', '建立成功');
+            return redirect('http://localhost:3000/admin');
             // return Redirect::to('/uploadNews'); //php用
-            return $result;
+            // return $result;
         }
     }
 
