@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Auth;
-
+use Illuminate\Http\Request;
 
 
 /*
@@ -31,7 +31,8 @@ Route::get('/getNews', [NewsController::class, 'getNews']);
 Route::get('/getToken',[NewsController::class, 'getToken']);
 
 Route::post('/register', [MemberController::class, 'register']);
-Route::post('/uploadnews', [NewsController::class, 'uploadNews'])->withoutMiddleware(['csrf']);
+Route::post('/uploadnews', [NewsController::class, 'uploadNews']);
+Route::post('/updateNew', [NewsController::class, 'updateNew']);
 // Route::middleware(['web', 'csrf'])->group(function () {
 //     Route::post('/uploadnews', [NewsController::class, 'uploadNews']);
 //     // 在此加入其他需要驗證 CSRF token 的路由

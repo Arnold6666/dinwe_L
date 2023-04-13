@@ -37,6 +37,16 @@ class NewsController extends Controller
         $token = Session::token();
         return response()->json(['csrf_token' => $token]);
     }
+
+    public function updateNew(Request $request){
+        $result = $this->news->updateNew($request);
+        if($result === "success"){
+            return redirect('http://localhost:3000/admin');
+        }else{
+            return "更新失敗";
+        }
+        
+    }
 }
 
 
