@@ -36,8 +36,9 @@ class News extends Model
     $created_at = $dateTimeStr;
     $updated_at = $dateTimeStr;
     // die($text);
-
+    // die(is_string($request->image));
     if (isset($request->image)) {
+      // die(is_string($request->image));
       $data = $request->image->get();
       $mime_type = $request->image->getMimeType();
       $imageData = base64_encode($data);

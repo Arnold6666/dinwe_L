@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Resturants;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class ResturantsContoller extends Controller
 {
@@ -26,9 +27,10 @@ class ResturantsContoller extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
         //
+        
     }
 
     /**
@@ -37,7 +39,15 @@ class ResturantsContoller extends Controller
     public function store(Request $request)
     {
         //
-
+        // die("1");
+        $result = $this->resturants->store($request);
+        if($result === "success"){
+            Session::flash('message', '建立成功');
+            return redirect('http://127.0.0.1:8000/uploadRes');
+        }else{
+            Session::flash('message', '建立失敗');
+            return redirect('http://127.0.0.1:8000/uploadRes');
+        }
     }
 
     /**

@@ -43,8 +43,8 @@
                 </div>
             @endif
             <div class="col-6 m-auto mt-5 border p-4 border-info rounded">
-                <form action="/uploadRes" method="post">
-                    @csrf
+                <form action="/storeRes" method="post" enctype="multipart/form-data">
+                    {{-- @csrf --}}
                     @method('post')
                     <div class="mb-3">
                         <label for="name" class="form-label">餐廳名字</label>
@@ -55,20 +55,32 @@
                         <input type="text" class="form-control" id="address" name="address">
                     </div>
                     <div class="mb-3">
-                        <label for="cover" class="form-label">封面</label>
-                        <input type="file" class="form-control" id="cover" name="cover">
+                        <label for="imag1e" class="form-label">餐廳照片1</label>
+                        <input type="file" class="form-control" id="image1" name="image1" multiple>
                     </div>
                     <div class="mb-3">
-                        <label for="image" class="form-label">餐廳照片1</label>
-                        <input type="file" class="form-control" id="image" name="image">
+                        <label for="image2" class="form-label">餐廳照片2</label>
+                        <input type="file" class="form-control" id="image2" name="image2" multiple>
                     </div>
                     <div class="mb-3">
-                        <label for="menu" class="form-label">餐廳菜單1</label>
-                        <input type="file" class="form-control" id="menu" name="menu">
+                        <label for="image3" class="form-label">餐廳照片3</label>
+                        <input type="file" class="form-control" id="image3" name="image3" multiple>
+                    </div>
+                    <div class="mb-3">
+                        <label for="menu1" class="form-label">餐廳菜單1</label>
+                        <input type="file" class="form-control" id="menu1" name="menu1" multiple>
+                    </div>
+                    <div class="mb-3">
+                        <label for="menu2" class="form-label">餐廳菜單2</label>
+                        <input type="file" class="form-control" id="menu2" name="menu2" multiple>
+                    </div>
+                    <div class="mb-3">
+                        <label for="menu3" class="form-label">餐廳菜單3</label>
+                        <input type="file" class="form-control" id="menu3" name="menu3" multiple>
                     </div>
                     <div class="mb-3">
                         <label for="intro" class="form-label">餐廳簡介</label>
-                        <textarea class="form-control" style="resize: none; height: 300px" id="intro" name="intro"></textarea>
+                        <textarea class="form-control" style="resize: none; height: 150px" id="intro" name="intro"></textarea>
                     </div>
                     <p class="text-center mb-0">
                         <button type="submit" class="btn btn-primary w-50">新增餐廳</button>
