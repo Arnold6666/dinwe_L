@@ -53,9 +53,11 @@ class ResturantsContoller extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Resturants $resturants)
+    public function show($id)
     {
         //
+        $result = $this->resturants->show($id);
+        return $result;
     }
 
     /**

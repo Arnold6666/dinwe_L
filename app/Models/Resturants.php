@@ -45,6 +45,12 @@ class Resturants extends Model
     return "success";
   }
 
+  public function show($id){
+    $result = DB::table('resturants')->where('resturant_id', $id)->get();
+    
+    return $result;
+  }
+
   public function imageTreat($image)
   {
     // die(is_string($image));

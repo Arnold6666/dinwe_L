@@ -28,6 +28,7 @@ Route::get('/login', function () {
 
 Route::get('/uploadNews', function () {return view('uploadNews');});
 Route::get('/getNews', [NewsController::class, 'getNews']);
+Route::get('/getRes/{id}', [ResturantsContoller::class, 'show']);
 Route::get('/getToken',[NewsController::class, 'getToken']);
 Route::get('/uploadRes',function () {return view('uploadRes');});
 
