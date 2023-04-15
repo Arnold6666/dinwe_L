@@ -53,7 +53,7 @@ class Resturants extends Model
 
   public function imageTreat($image)
   {
-    // die(is_string($image));
+    // die(is_string($image)); // 透過input 加 
     if ($image === null) {
       return null;
     } else {

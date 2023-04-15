@@ -36,6 +36,7 @@ Route::post('/register', [MemberController::class, 'register']);
 Route::post('/uploadnews', [NewsController::class, 'uploadNews']);
 Route::post('/updateNew', [NewsController::class, 'updateNew']);
 Route::post('/storeRes', [ResturantsContoller::class, 'store']);
+Route::post('/storeOrder', [M_ordersController::class, 'store']);
 // Route::middleware(['web', 'csrf'])->group(function () {
 //     Route::post('/uploadnews', [NewsController::class, 'uploadNews']);
 //     // 在此加入其他需要驗證 CSRF token 的路由
