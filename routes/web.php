@@ -31,12 +31,14 @@ Route::get('/getNews', [NewsController::class, 'getNews']);
 Route::get('/getRes/{id}', [ResturantsContoller::class, 'show']);
 Route::get('/getToken',[NewsController::class, 'getToken']);
 Route::get('/uploadRes',function () {return view('uploadRes');});
+Route::get('/facilitiesStore/{id}',[Resturant_facilitiesControllers::class, 'show']);
 
 Route::post('/register', [MemberController::class, 'register']);
 Route::post('/uploadnews', [NewsController::class, 'uploadNews']);
 Route::post('/updateNew', [NewsController::class, 'updateNew']);
 Route::post('/storeRes', [ResturantsContoller::class, 'store']);
 Route::post('/storeOrder', [M_ordersController::class, 'store']);
+Route::post('/facilitiesStore', [Resturant_facilitiesControllers::class, 'store']);
 // Route::middleware(['web', 'csrf'])->group(function () {
 //     Route::post('/uploadnews', [NewsController::class, 'uploadNews']);
 //     // 在此加入其他需要驗證 CSRF token 的路由
