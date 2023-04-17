@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Resturant_activities;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Auth;
 use Illuminate\Http\Request;
@@ -31,13 +32,16 @@ Route::get('/getNews', [NewsController::class, 'getNews']);
 Route::get('/getRes/{id}', [ResturantsContoller::class, 'show']);
 Route::get('/getToken',[NewsController::class, 'getToken']);
 Route::get('/uploadRes',function () {return view('uploadRes');});
-Route::get('/facilitiesStore/{id}',[Resturant_facilitiesControllers::class, 'show']);
+Route::get('/uploadactivity/{id}',function ($id) {return view('uploadactivity',['id'=>$id]);});
+Route::get('/getActivity/{id}',[Resturant_activitiesController::class, 'show']);
+Route::get('/facilitiesStore/{id}', [Resturant_facilitiesControllers::class, 'show']);
 
 Route::post('/register', [MemberController::class, 'register']);
 Route::post('/uploadnews', [NewsController::class, 'uploadNews']);
 Route::post('/updateNew', [NewsController::class, 'updateNew']);
 Route::post('/storeRes', [ResturantsContoller::class, 'store']);
 Route::post('/storeOrder', [M_ordersController::class, 'store']);
+Route::post('/storeActivity', [Resturant_activitiesController::class, 'store']);
 Route::post('/facilitiesStore', [Resturant_facilitiesControllers::class, 'store']);
 // Route::middleware(['web', 'csrf'])->group(function () {
 //     Route::post('/uploadnews', [NewsController::class, 'uploadNews']);

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,47 +43,32 @@
                 </div>
             @endif
             <div class="col-6 m-auto mt-5 border p-4 border-info rounded">
-                <form action="/storeRes" method="post" enctype="multipart/form-data">
-                    {{-- @csrf --}}
+                <form action="/storeActivity" method="post" enctype="multipart/form-data">
+                    @csrf
                     @method('post')
                     <div class="mb-3">
-                        <label for="name" class="form-label">餐廳名字</label>
-                        <input type="text" class="form-control" id="name" name="name">
+                        <input type="hidden" name="resturant_id" value={{$id}}>
+                        <label for="image" class="form-label">活動照片</label>
+                        <input type="file" class="form-control" id="image" name="image" multiple>
                     </div>
                     <div class="mb-3">
-                        <label for="address" class="form-label">餐廳地址</label>
-                        <input type="text" class="form-control" id="address" name="address">
+                        <label for="title" class="form-label">活動名稱</label>
+                        <input type="text" class="form-control" id="title" name="title">
                     </div>
                     <div class="mb-3">
-                        <label for="imag1e" class="form-label">餐廳照片1</label>
-                        <input type="file" class="form-control" id="image1" name="image1" multiple>
+                        <label for="text" class="form-label">活動內文</label>
+                        <textarea class="form-control" id="text" name="text" cols="30" rows="10" style="resize: none"></textarea>
                     </div>
                     <div class="mb-3">
-                        <label for="image2" class="form-label">餐廳照片2</label>
-                        <input type="file" class="form-control" id="image2" name="image2" multiple>
+                        <label for="begin_date" class="form-label">開始日期</label>
+                        <input type="date" class="form-control" id="begin_date" name="begin_date">
                     </div>
                     <div class="mb-3">
-                        <label for="image3" class="form-label">餐廳照片3</label>
-                        <input type="file" class="form-control" id="image3" name="image3" multiple>
-                    </div>
-                    <div class="mb-3">
-                        <label for="menu1" class="form-label">餐廳菜單1</label>
-                        <input type="file" class="form-control" id="menu1" name="menu1" multiple>
-                    </div>
-                    <div class="mb-3">
-                        <label for="menu2" class="form-label">餐廳菜單2</label>
-                        <input type="file" class="form-control" id="menu2" name="menu2" multiple>
-                    </div>
-                    <div class="mb-3">
-                        <label for="menu3" class="form-label">餐廳菜單3</label>
-                        <input type="file" class="form-control" id="menu3" name="menu3" multiple>
-                    </div>
-                    <div class="mb-3">
-                        <label for="intro" class="form-label">餐廳簡介</label>
-                        <textarea class="form-control" style="resize: none; height: 150px" id="intro" name="intro"></textarea>
+                        <label for="end_date" class="form-label">結束日期</label>
+                        <input type="date" class="form-control" id="end_date" name="end_date">
                     </div>
                     <p class="text-center mb-0">
-                        <button type="submit" class="btn btn-primary w-50">新增餐廳</button>
+                        <button type="submit" class="btn btn-primary w-50">建立活動</button>
                     </p>
                 </form>
             </div>

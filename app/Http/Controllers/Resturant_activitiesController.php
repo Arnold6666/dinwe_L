@@ -2,23 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Resturants;
+use App\Models\Resturant_activities;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
-class ResturantsContoller extends Controller
+class Resturant_activitiesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-
-    protected $resturants;
+    protected $resturant_activities;
 
     public function __construct()
     {
-        $this->resturants = new Resturants;
+        $this->resturant_activities = new Resturant_activities;
     }
-
+    /**
+     * Display a listing of the resource.
+     */
     public function index()
     {
         //
@@ -27,10 +25,9 @@ class ResturantsContoller extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(Request $request)
+    public function create()
     {
         //
-        
     }
 
     /**
@@ -39,15 +36,13 @@ class ResturantsContoller extends Controller
     public function store(Request $request)
     {
         //
-        // echo $id;
-        // die("1");
-        $result = $this->resturants->store($request);
+        $result = $this->resturant_activities->store($request);
         if($result === "success"){
             Session::flash('message', '建立成功');
-            return redirect('http://127.0.0.1:8000/uploadRes');
+            return redirect('http://localhost:8000/uploadactivity/' . $request->resturant_id);
         }else{
             Session::flash('message', '建立失敗');
-            return redirect('http://127.0.0.1:8000/uploadRes');
+            return redirect('http://localhost:8000/uploadactivity' . $request->resturant_id);
         }
     }
 
@@ -57,14 +52,14 @@ class ResturantsContoller extends Controller
     public function show($id)
     {
         //
-        $result = $this->resturants->show($id);
+        $result = $this->resturant_activities->show($id);
         return $result;
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Resturants $resturants)
+    public function edit(Resturant_activities $resturant_activities)
     {
         //
     }
@@ -72,7 +67,7 @@ class ResturantsContoller extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Resturants $resturants)
+    public function update(Request $request, Resturant_activities $resturant_activities)
     {
         //
     }
@@ -80,7 +75,7 @@ class ResturantsContoller extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Resturants $resturants)
+    public function destroy(Resturant_activities $resturant_activities)
     {
         //
     }

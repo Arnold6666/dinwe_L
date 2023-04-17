@@ -53,7 +53,6 @@ class Resturant_facilities extends Model
         $child = [];
         $food = [];
         foreach ($result2 as $item => $value) {
-
             if ($value <= 8) {
                 if($item === "resturant_id"){ continue;}
                 array_push($pay,$info[$value]);
